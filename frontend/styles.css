@@ -1,0 +1,141 @@
+*{
+    font-family: Tahoma;
+}
+
+.title-container h1{
+    font-size: 2.5vh;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pr-section{
+    background-color: rgb(119, 136, 153);
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+    margin-top: 0.3rem;
+    margin-left: 0.3rem;
+    box-shadow: 0.06rem 0.06rem;
+    width: 14.4rem;
+    min-width: 12.5rem;
+    cursor: pointer;
+}
+
+.pr-section:hover{
+    background-color: blue;
+}
+
+.pr-section:hover div{
+    background-color: red;
+}
+
+
+.pr-section div p{
+    display:block
+}
+.grid-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 70%;
+    margin: auto;
+}
+
+section img{
+    display:flex;
+    margin: 0 auto;
+}
+
+header{
+    background-color: grey;
+    height: 3rem;
+    display: flex;
+}
+
+.nav-principal{
+    width: 300px;
+    position: absolute;
+}
+
+.list{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: 0;
+    list-style-type: none;
+    padding: 10px;
+}
+
+.nav-principal li{
+    list-style-type: none;
+    padding:0;
+}
+
+.nav-principal-visible{
+    display: none;
+}
+
+.list-show{
+    padding-inline-start: 10px;
+}
+
+.cant-productos p{
+    margin: 0 auto;
+    width: 6rem;
+}
+
+.cant-productos{
+    width: 100%;
+}
+
+body {
+    background-color: lightgrey;
+}
+
+.paginacion{
+    width:fit-content;
+    margin: 1rem auto;
+}
+
+.paginacion button{
+    margin-left: 0.3rem;
+}
+
+.title-container{
+    background-color: grey;
+    margin:  0.3rem 0;
+    width: 100%;
+}
+.title-container h1{
+    width: fit-content;
+    padding: 0.5rem 0;
+    margin: auto;
+}
+
+
+.burger-menu{
+    background-color: rgb(128, 128, 150);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.burger-menu div{
+    width: 70%;
+    height: 10%;
+    border-radius: 10%;
+    background-color: rgb(150, 180, 180);
+    margin: 0.1rem auto;
+}
+
+.logo-img{
+    width: 3rem;
+}
