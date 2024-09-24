@@ -16,10 +16,17 @@ const createProducto = async (producto, tipoProducto, precio, imagen, local, ima
     }
 }
 
+const updateProducto = async (nombre) => {
+    try{
+        await Producto.findOneAndUpdate({producto: nombre}, {producto, tipoProducto, precio, imagen, local, imagenLocal, urlProductoLocal})
+    }catch(err){
+        
+    }
+}
+
 const fetchProductos = async (req, res) => {
     try {
         const productos = await Producto.find()
-
         res.json({ productos })
     } catch (err) {
         console.log(err)
@@ -30,9 +37,7 @@ const fetchProductos = async (req, res) => {
 const fetchProductosPorTipo = async (req, res) => {
     try {
         const tipo = req.params.tipoProductos
-        console.log(tipo)
         const productos = await Producto.find({ tipoProducto: tipo })
-
         res.json({ productos })
     } catch (err) {
         console.log(err)

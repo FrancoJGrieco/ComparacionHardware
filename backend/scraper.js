@@ -148,7 +148,7 @@ function subirADB(lista, tipo, datosPagina) {
   lista.map((producto) => {
     try{
       if(producto.precio != '') {
-        productosController.createProducto(producto.producto, tipo, producto.precio, producto.imagen, datosPagina.local, datosPagina.imagenLocal, '')
+        productosController.createProducto(producto.producto.toUpperCase(), tipo, producto.precio, producto.imagen, datosPagina.local, datosPagina.imagenLocal, '')
       }
     }catch(err){
       console.log('No se pudo subir el producto: ' + err)

@@ -1,15 +1,16 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import ProductosPage from './pages/ProductosPage.jsx'
 import { useState } from 'react'
-// import PlacasPage from './pages/PlacasPage.jsx'
-// import ProcesadoresPage from './pages/ProcesadoresPage.jsx'
-// import MothersPage from './pages/MothersPage.jsx'
-// import RAMPage from './pages/RAMPage.jsx'
-// import AlmacenamientoPage from './pages/AlmacenamientoPage.jsx'
 
 function App() {
 
-  const[visibilidad, setVisibilidad] = useState(false)
+  const [visibilidad, setVisibilidad] = useState(false)
+  const [busqueda, setBusqueda] = useState('')
+
+  function modificarBusqueda(e){
+    setBusqueda(e.target.value)
+  }
+
   return (
     <div className='App'>
       <BrowserRouter>
@@ -19,8 +20,12 @@ function App() {
             <div></div>
             <div></div>
           </div>
-          <div>
+          <div className='logo-img-container'>
             <Link to='/'><img src='src\img\intercambio.png' className='logo-img'/></Link>
+          </div>
+          <div className='search-container'>
+            <input type='text' placeholder='Search' className='search-input' onChange={modificarBusqueda}/>
+            <button className='btn-search' onClick={() => {console.log(busqueda)}}>Buscar</button>
           </div>
         </header>
         <nav className={visibilidad ? 'nav-principal' : 'nav-principal nav-principal-visible'}>
@@ -31,10 +36,10 @@ function App() {
               </div>
                 <ul className='list-show'>
                   <li>
-                    AMD
+                    <Link to='/placas-de-video/AMD'>AMD</Link>
                   </li>
                   <li>
-                    Nvidia
+                    <Link to='/placas-de-video/Nvidia'>Nvidia</Link>
                   </li>
                 </ul>
             </li>
@@ -97,22 +102,31 @@ function App() {
         </nav>
         <Routes>
           <Route path='/' element={
-              <ProductosPage tipo=''/>
+              <ProductosPage/>
           } />
           <Route path='/placas-de-video' element={
-              <ProductosPage tipo='placa' titulo='Placas de Video'/>
+              <ProductosPage tipo='placa' titulo='Placas de Video' filtros={[
+                {
+                  nombre: 'Marca',
+                  opciones: ['AMD', 'Nvidia']
+                },
+                {
+                  nombre: 'Espacio',
+                  opciones: ['4GB', '8GB', '12GB', '16GB']
+                }
+              ]}/>
           } />
           <Route path='/motherboards' element={
-              <ProductosPage tipo='mother' titulo='Motherboards'/>
+              <ProductosPage tipo='mother' titulo='Motherboards' filtros={['amd', 'intel']}/>
           } />
           <Route path='/memorias-ram' element={
-              <ProductosPage tipo='memoria' titulo='Memorias RAM'/>
+              <ProductosPage tipo='memoria' titulo='Memorias RAM' filtros={['ddr3', 'ddr4', 'ddr5']}/>
           } />
           <Route path='/almacenamientos' element={
-              <ProductosPage tipo='almacenamiento' titulo='Almacenamientos'/>
+              <ProductosPage tipo='almacenamiento' titulo='Almacenamientos' filtros={['Hdd', 'Ssd']}/>
           } />
           <Route path='/procesadores' element={
-              <ProductosPage tipo='procesador' titulo='Procesadores'/>
+              <ProductosPage tipo='procesador' titulo='Procesadores' filtros={['amd', 'intel']}/>
           } />
         </Routes>
       </BrowserRouter>

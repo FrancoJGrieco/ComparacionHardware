@@ -1,18 +1,20 @@
-*{
+* {
     font-family: Tahoma;
 }
 
-.title-container h1{
+.title-container h1 {
     font-size: 2.5vh;
 }
-html, body {
+
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
 }
 
-.pr-section{
+.pr-section {
     background-color: rgb(119, 136, 153);
     border-radius: 0.3rem;
     padding: 0.3rem;
@@ -24,19 +26,15 @@ html, body {
     cursor: pointer;
 }
 
-.pr-section:hover{
-    background-color: blue;
+.pr-section:hover {
+    background-color: rgb(119, 136, 200);
 }
 
-.pr-section:hover div{
-    background-color: red;
+.pr-section div p {
+    display: block
 }
 
-
-.pr-section div p{
-    display:block
-}
-.grid-container{
+.grid-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -44,23 +42,23 @@ html, body {
     margin: auto;
 }
 
-section img{
-    display:flex;
+section img {
+    display: flex;
     margin: 0 auto;
 }
 
-header{
+header {
     background-color: grey;
     height: 3rem;
     display: flex;
 }
 
-.nav-principal{
+.nav-principal {
     width: 300px;
     position: absolute;
 }
 
-.list{
+.list {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -71,25 +69,25 @@ header{
     padding: 10px;
 }
 
-.nav-principal li{
+.nav-principal li {
     list-style-type: none;
-    padding:0;
+    padding: 0;
 }
 
-.nav-principal-visible{
+.nav-principal-visible {
     display: none;
 }
 
-.list-show{
+.list-show {
     padding-inline-start: 10px;
 }
 
-.cant-productos p{
+.cant-productos p {
     margin: 0 auto;
     width: 6rem;
 }
 
-.cant-productos{
+.cant-productos {
     width: 100%;
 }
 
@@ -97,28 +95,29 @@ body {
     background-color: lightgrey;
 }
 
-.paginacion{
-    width:fit-content;
+.paginacion {
+    width: fit-content;
     margin: 1rem auto;
 }
 
-.paginacion button{
+.paginacion button {
     margin-left: 0.3rem;
 }
 
-.title-container{
+.title-container {
     background-color: grey;
-    margin:  0.3rem 0;
+    margin: 0.3rem 0;
     width: 100%;
 }
-.title-container h1{
+
+.title-container h1 {
     width: fit-content;
     padding: 0.5rem 0;
     margin: auto;
 }
 
 
-.burger-menu{
+.burger-menu {
     background-color: rgb(128, 128, 150);
     width: 3rem;
     height: 3rem;
@@ -128,7 +127,12 @@ body {
     justify-content: center;
 
 }
-.burger-menu div{
+
+.burger-menu:hover {
+    background-color: rgb(128, 128, 180);
+}
+
+.burger-menu div {
     width: 70%;
     height: 10%;
     border-radius: 10%;
@@ -136,6 +140,64 @@ body {
     margin: 0.1rem auto;
 }
 
-.logo-img{
-    width: 3rem;
+.logo-img-container {
+    margin: auto 0;
+    width: fit-content;
+}
+
+.logo-img {
+    width: 2.8rem;
+    margin-left: 0.5rem;
+}
+
+.search-container {
+    width: fit-content;
+    margin: auto;
+}
+
+.search-input {
+    width: 35rem;
+    height: 2rem;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    margin: auto;
+    border: none;
+    outline:none;
+    padding-left: 1rem;
+
+}
+
+.btn-search {
+    height: 2.1rem;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    margin: none;
+    border:none;
+    background-color: white;
+    padding-left: 1rem;
+}
+.btn-search:hover{
+    background-color: whitesmoke;
+}
+
+.fi-section-opcion {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    font-size: larger;
+    font-weight: bold;
+    border-radius: 5px;
+    padding-left: 0.5rem;
+}
+
+.main-principal{
+    display: flex;
+
+}
+
+.page-container{
+    display: flex;
+    flex-direction: column;
 }
