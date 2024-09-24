@@ -105,33 +105,35 @@ function App() {
               <ProductosPage/>
           } />
           <Route path='/placas-de-video' element={
-              <ProductosPage tipo='placa' titulo='Placas de Video' filtros={[
-                {
-                  nombre: 'Marca',
-                  opciones: ['AMD', 'Nvidia']
-                },
-                {
-                  nombre: 'Espacio',
-                  opciones: ['4GB', '8GB', '12GB', '16GB']
-                }
-              ]}/>
+              <ProductosPage tipo='placa' titulo='Placas de Video' filtros={filtrosPlacas}/>
           } />
           <Route path='/motherboards' element={
-              <ProductosPage tipo='mother' titulo='Motherboards' filtros={['amd', 'intel']}/>
+              <ProductosPage tipo='mother' titulo='Motherboards' filtros={filtrosPlacas}/>
           } />
           <Route path='/memorias-ram' element={
-              <ProductosPage tipo='memoria' titulo='Memorias RAM' filtros={['ddr3', 'ddr4', 'ddr5']}/>
+              <ProductosPage tipo='memoria' titulo='Memorias RAM' filtros={filtrosPlacas}/>
           } />
           <Route path='/almacenamientos' element={
-              <ProductosPage tipo='almacenamiento' titulo='Almacenamientos' filtros={['Hdd', 'Ssd']}/>
+              <ProductosPage tipo='almacenamiento' titulo='Almacenamientos' filtros={filtrosPlacas}/>
           } />
           <Route path='/procesadores' element={
-              <ProductosPage tipo='procesador' titulo='Procesadores' filtros={['amd', 'intel']}/>
+              <ProductosPage tipo='procesador' titulo='Procesadores' filtros={filtrosPlacas}/>
           } />
         </Routes>
       </BrowserRouter>
     </div>
   )
 }
+
+const filtrosPlacas= [
+  {
+    nombre: 'Marca',
+    opciones: ['AMD', 'Nvidia']
+  },
+  {
+    nombre: 'Espacio',
+    opciones: ['4GB', '8GB', '12GB', '16GB']
+  }
+]
 
 export default App
