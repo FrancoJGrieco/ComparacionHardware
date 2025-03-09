@@ -25,14 +25,24 @@ function ProductosPage({ tipo, titulo, filtros }) {
     setProductosPagina(productos.slice((0 + (20 * cont)), (20 + (20 * cont))))
   }, [cont])
 
+  // function filtrarProductos() {
+  //   return productos.filter((producto) => {
+  //     return (producto.includes(filtrarProductos.filtros))
+  //   })
+  // }
+
 
   function sortPrecio(a, b) {
-    const precioA = parseFloat(a.precio.replace('$', '').replaceAll('.', '').replace(',', '.'))
-    const precioB = parseFloat(b.precio.replace('$', '').replaceAll('.', '').replace(',', '.'))
+    const precioA = parseFloat(normalizarPrecio(a.precio))
+    const precioB = parseFloat(normalizarPrecio(b.precio))
 
     if (precioA > precioB) return 1
     if (precioA < precioB) return -1
     return 0
+  }
+
+  function normalizarPrecio(precio){
+    return precio.replace('$', '').replaceAll('.', '').replace(',', '.')
   }
 
   function paginar(direccion) {
@@ -45,7 +55,6 @@ function ProductosPage({ tipo, titulo, filtros }) {
       setCont(cont + 1)
     }
   }
-
   if (!tipo) return <>Hacer Home</>
   return (
     <main className='main-principal'>
