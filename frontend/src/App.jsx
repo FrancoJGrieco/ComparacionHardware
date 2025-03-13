@@ -21,7 +21,7 @@ function App() {
             <div></div>
           </div>
           <div className='logo-img-container'>
-            <Link to='/'><img src='src\img\intercambio.png' className='logo-img'/></Link>
+            <Link to='/'><p>CompuPrice</p></Link>
           </div>
           <div className='search-container'>
             <input type='text' placeholder='Search' className='search-input' onChange={modificarBusqueda}/>

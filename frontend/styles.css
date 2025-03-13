@@ -18,7 +18,7 @@ body {
 .pr-section {
     background-color: rgb(119, 136, 153);
     border-radius: 0.3rem;
-    padding: 0.3rem;
+    /* padding: 0.3rem; */
     margin-top: 0.3rem;
     margin-left: 0.3rem;
     box-shadow: 0.06rem 0.06rem;

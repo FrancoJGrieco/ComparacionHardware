@@ -3,8 +3,14 @@ import { Typography, CardActionArea, CardMedia, Card, Box } from '@mui/material'
 /* eslint-disable react/prop-types */
 export default function Productos({ producto }) {
     return (
-        <Card className='pr-section' key={producto._id}>
-            <CardActionArea>
+        <Card 
+            className='pr-section'
+            key={producto._id}
+         >
+            <CardActionArea
+                sx={{padding: 0.5}}
+                onClick={()=>{}}
+            >
                 <CardMedia
                     component='img'
                     height='200'
